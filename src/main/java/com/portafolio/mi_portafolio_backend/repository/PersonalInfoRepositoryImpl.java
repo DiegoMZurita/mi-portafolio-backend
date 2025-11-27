@@ -39,9 +39,9 @@ public class PersonalInfoRepositoryImpl implements  IPersonalInfoRepository{
     @Override
     public PersonalInfo save(PersonalInfo personalInfo) {
         if(personalInfo.getId()==null){
-            String sql = "INSERT INTO personal_info (first_name, last_name, title, profile_description " +
+            String sql = "INSERT INTO personal_info (first_name, last_name, title, profile_description, " +
                     "profile_image_url, years_of_experience, email, phone, linkedin_url, github_url) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             KeyHolder keyHolder = new GeneratedKeyHolder();
             jdbcTemplate.update( connection -> {
                     PreparedStatement ps = connection.prepareStatement(sql, new String[]{"id"});
@@ -75,6 +75,7 @@ public class PersonalInfoRepositoryImpl implements  IPersonalInfoRepository{
                     personalInfo.getProfileDescription(),
                     personalInfo.getProfileImageUrl(),
                     personalInfo.getYearsOfExperience(),
+                    personalInfo.getEmail(),
                     personalInfo.getPhone(),
                     personalInfo.getLinkedinUrl(),
                     personalInfo.getGithubUrl(),
@@ -82,7 +83,7 @@ public class PersonalInfoRepositoryImpl implements  IPersonalInfoRepository{
             );
 
         }
-        return null;
+        return personalInfo;
     }
 
 //    @Override
