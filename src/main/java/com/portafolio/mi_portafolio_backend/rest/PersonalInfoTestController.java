@@ -41,4 +41,5 @@ public class PersonalInfoTestController {
         PersonalInfo newPersonalInfo = personalInfoService.save(personalInfo);
         return new ResponseEntity<>(newPersonalInfo, HttpStatus.CREATED);
     }
+
 }
