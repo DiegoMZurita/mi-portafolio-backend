@@ -1,0 +1,44 @@
+package com.portafolio.mi_portafolio_backend.rest;
+
+import com.portafolio.mi_portafolio_backend.model.Experience;
+import com.portafolio.mi_portafolio_backend.service.IExperienceService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api/experience")
+public class ExperienceController {
+    private final IExperienceService experienceService;
+
+    public ExperienceController(IExperienceService experienceService){
+        this.experienceService = experienceService;
+    }
+
+    @GetMapping
+    public List<Experience> findAll() {
+        return experienceService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Experience> findById(@PathVariable Long id){
+        return experienceService.findById(id);
+    }
+
+    @PostMapping
+    public Experience save(@RequestBody Experience experience){
+        return experienceService.save(experience);
+    }
+
+    @PutMapping("/{id}")
+    public Experience update(@PathVariable Long id, @RequestBody Experience experience){
+        experience.setId(id);
+        return experienceService.save(experience);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id){
+        experienceService.deleteById(id);
+    }
+}

@@ -90,7 +90,7 @@ public class ExperienceRepositoryImpl implements IExperienceRepository{
 
     @Override
     public void deleteById(Long id) {
-        String sql = "SELECT * FROM experiences WHERE id = ?";
+        String sql = "Delete From experiences Where id = ?";
         jdbcTemplate.update(sql, id);
     }
 
