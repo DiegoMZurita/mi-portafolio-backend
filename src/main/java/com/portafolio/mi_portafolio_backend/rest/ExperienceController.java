@@ -2,6 +2,8 @@ package com.portafolio.mi_portafolio_backend.rest;
 
 import com.portafolio.mi_portafolio_backend.model.Experience;
 import com.portafolio.mi_portafolio_backend.service.IExperienceService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,8 +24,13 @@ public class ExperienceController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Experience> findById(@PathVariable Long id){
-        return experienceService.findById(id);
+    public ResponseEntity<Experience> findById(@PathVariable Long id){
+        Optional<Experience> experience = experienceService.findById(id);
+        if(experience.isPresent()){
+            return new ResponseEntity<>(experience.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @PostMapping

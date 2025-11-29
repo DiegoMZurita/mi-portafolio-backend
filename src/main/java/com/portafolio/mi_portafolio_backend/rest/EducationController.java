@@ -3,6 +3,8 @@ package com.portafolio.mi_portafolio_backend.rest;
 
 import com.portafolio.mi_portafolio_backend.model.Education;
 import com.portafolio.mi_portafolio_backend.service.IEducationService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -24,8 +26,13 @@ public class EducationController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Education> findById(@PathVariable Long id) {
-        return educationService.findById(id);
+    public ResponseEntity<Education> findById(@PathVariable Long id) {
+        Optional<Education> education = educationService.findById(id);
+        if(education.isPresent()){
+            return new ResponseEntity<>(education.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @PostMapping

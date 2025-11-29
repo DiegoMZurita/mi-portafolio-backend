@@ -27,12 +27,12 @@ public class PersonalInfoTestController {
     }
 
     @GetMapping("/{id}")
-    public PersonalInfo getPersonalInfoById(@PathVariable Long id) {
+    public ResponseEntity<PersonalInfo> getPersonalInfoById(@PathVariable Long id) {
         Optional<PersonalInfo> info = personalInfoService.findById(id);
         if(info.isPresent()){
-            return info.get();
+            return new ResponseEntity<>(info.get(), HttpStatus.OK);
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Información personal no disponible en el ID: "+ id);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
 
