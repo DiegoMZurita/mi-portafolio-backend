@@ -42,4 +42,14 @@ public class PersonalInfoTestController {
         return new ResponseEntity<>(newPersonalInfo, HttpStatus.CREATED);
     }
 
+    @PutMapping("/{id}")
+    public PersonalInfo update(@PathVariable Long id, @RequestBody PersonalInfo personalInfo) {
+        personalInfo.setId(id);
+        return personalInfoService.save(personalInfo);
+    }
+
+    @DeleteMapping("/{id}")
+    public void  deleteBy(@PathVariable Long id) {
+        personalInfoService.deleteById(id);
+    }
 }

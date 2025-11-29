@@ -38,8 +38,8 @@ public class EducationRepositoryImpl implements  IEducationRepository{
     @Override
     public Education save(Education education) {
         if(education.getId()==null){
-            String sql = "INSERT INTO educations (degree, institution, start_date, end_date, description. personal_info_id) " +
-                    "VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO educations (degree, institution, start_date, end_date, description, personal_info_id) " +
+                    "VALUES (?, ?, ?, ?, ?, ?)";
             KeyHolder keyHolder = new GeneratedKeyHolder();
 
             jdbcTemplate.update(connection ->{
@@ -60,7 +60,7 @@ public class EducationRepositoryImpl implements  IEducationRepository{
         } else {
 
             String sql = "UPDATE educations SET degree = ?, institution = ?, start_date = ?, end_date = ?, " +
-                    "description = ? personal_info_id = ? WHERE id = ?";
+                    "description = ?, personal_info_id = ? WHERE id = ?";
             jdbcTemplate.update(sql,
                     education.getDegree(),
                     education.getInstitution(),
