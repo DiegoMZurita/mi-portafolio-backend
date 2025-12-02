@@ -1,4 +1,4 @@
-package com.portafolio.mi_portafolio_backend.exception.hangler;
+package com.portafolio.mi_portafolio_backend.exception.handler;
 
 
 import com.portafolio.mi_portafolio_backend.exception.ValidationException;
