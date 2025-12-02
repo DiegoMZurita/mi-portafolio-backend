@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.URL;
 
 @Data
 @AllArgsConstructor
@@ -15,22 +16,31 @@ public class PersonalInfo {
 
     @NotBlank(message = "El nombre no puede estar vacío")
     private String firstName;
+
     @NotBlank(message = "El apellido no puede estar vacío")
     private String lastName;
+
     @NotBlank(message = "El título no puede estar vacío")
     private String title; // Ejemplo "Full Stack Developer"
+
     @NotBlank(message = "La descripción del perfil no puede estar vacía")
     private String profileDescription; //Descripción de mi perfil
+
     @NotBlank(message = "La imagen no puede estar vacía")
     private String profileImageUrl; //URL o ruta a la imagen de perfil
+
     @Min(value = 0, message = "Los años de experiencia no puede ser negativos")
     private Integer yearsOfExperience;
+
     @Email(message = "El email no es válido")
     private String email;
+
     @NotBlank(message = "El teléfono no puede estar vacío ")
     private String phone;
-    @NotBlank(message = "LinkedIn es una red obligatoria")
+
+    @URL(message = "LinkedIn es una red obligatoria")
     private String linkedinUrl;
-    @NotBlank(message = "Github es una red obligatoria")
+
+    @URL(message = "Github es una red obligatoria")
     private String githubUrl;
 }
