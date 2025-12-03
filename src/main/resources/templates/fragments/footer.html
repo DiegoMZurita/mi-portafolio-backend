@@ -6,13 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div th:insert="fragments/header :: header"></div>
-
-    <main>
-        <h1>Hola desde Thymeleaf</h1>
-        <p>La vista ha sido renderizada correctamente.</p>
-    </main>
-
-    <div th:insert="fragments/footer :: footer"></div>
+    <footer th:fragment="footer">
+        <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados</p>
+    </footer>
 </body>
 </html>
