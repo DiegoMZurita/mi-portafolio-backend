@@ -19,3 +19,7 @@ INSERT INTO educations (degree, institution, start_date, end_date, description, 
 
 INSERT INTO experiences (job_title, company_name, start_date, end_date, description, personal_info_id) VALUES
 ('Desarrollador Full Stack Junior', 'SECTRA', '2025-02-05', '2025-04-05', 'Desarrollo, mantención y mejora de un sistema legado de gestión de estudios y órdenes de trabajo (SIGES)', 1);
+
+INSERT INTO projects (title, description, image_url, project_url, personal_info_id) VALUES
+('Portfolio Personal', 'Un portafolio web para mostrar mis habilidades y proyectos.', 'img/projects/project2.jpg', 'https://github.com/DiegoMZurita/mi-portafolio-backend', 1),
+('Aplicación de E-commerce', 'Plataforma de comercio electrónico con carrito de compras y pasarela de pago.', 'img/projects/project1.jpg', 'https://github.com/DiegoMZurita/ecommerce-rincon-nutritivo', 1);
