@@ -5,17 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Portafolio</title>
 </head>
 <body>
-    <div th:insert="fragments/header :: header"></div>
+    <header>
+        <div class="container">
+            <div th:insert="fragments/nav :: nav"></div>
+            <div th:insert="sections/personal-info-section :: hero"></div>
+        </div>
+
+    </header>
+
 
     <main>
 
         <div class="container">
+            <div th:insert="fragments/about :: about"></div>
             <div th:insert="sections/education-section :: education"></div>
             <div th:insert="sections/skills-section :: skills"></div>
             <div th:insert="sections/experience-section :: experience"></div>
+            <div th:insert="sections/contact-section :: contact"></div>
         </div>
 
     </main>

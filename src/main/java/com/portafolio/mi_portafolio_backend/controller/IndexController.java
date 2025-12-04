@@ -22,7 +22,7 @@ public class IndexController {
     public String showIndex(Model model){
         System.out.println("Mostrando la página de inicio");
 
-        model.addAttribute("personalInfo", personalInfoService.findAll());
+        model.addAttribute("personalInfo", personalInfoService.findAll().getFirst());
         model.addAttribute("educationList", educationService.findAll());
         model.addAttribute("skills", skillService.findAll());
         model.addAttribute("experienceList", experienceService.findAll());
