@@ -25,8 +25,8 @@ public class ProjectDto {
     @URL(message = "La URL de la imagen no tiene un formato válido")
     private String imageUrl; //URL o ruta a la imagen del proyecto
 
+    @NotBlank(message = "La URL del proyecto es obligatoria.")
     @URL(message = "La URL del proyecto no tiene un formato válido.")
-
     private String projectUrl; //URL al proyecto desplegado (si existe) o Github
 
     @NotNull(message = "El ID de información personal no puede ser nulo.")
