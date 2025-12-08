@@ -13,10 +13,10 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping (("/api/education"))
-public class EducationController {
+public class EducationRestController {
     private  final IEducationService educationService;
 
-    public EducationController(IEducationService educationService) {
+    public EducationRestController(IEducationService educationService) {
         this.educationService = educationService;
     }
 

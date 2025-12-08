@@ -1,14 +1,10 @@
 package com.portafolio.mi_portafolio_backend.service;
 
-import com.portafolio.mi_portafolio_backend.exception.ValidationException;
 import com.portafolio.mi_portafolio_backend.model.Skill;
 import com.portafolio.mi_portafolio_backend.repository.ISkillRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.BeanPropertyBindingResult;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.Validator;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,7 +14,6 @@ import java.util.Optional;
 public class SkillServiceImpl implements ISkillService {
 
     private final ISkillRepository skillRepository;
-    private final Validator validator;
 
     @Override
     @Transactional(readOnly = true)
@@ -35,14 +30,6 @@ public class SkillServiceImpl implements ISkillService {
     @Override
     @Transactional
     public Skill save(Skill skill) {
-        BindingResult result = new BeanPropertyBindingResult(skill, "skill");
-        validator.validate(skill, result);
-        if(result.hasErrors()){
-            throw new ValidationException(result);
-        }
-//        if(skill.getLevelPercentage() < 0 || skill.getLevelPercentage() > 100){
-//            throw new IllegalArgumentException("El porcentaje es incorrecto debe estar entre 0 y 100");
-//        }
         return skillRepository.save(skill);
     }
 
