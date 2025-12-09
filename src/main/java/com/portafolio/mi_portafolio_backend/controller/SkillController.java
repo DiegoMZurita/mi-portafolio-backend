@@ -1,7 +1,7 @@
 package com.portafolio.mi_portafolio_backend.controller;
 
 import com.portafolio.mi_portafolio_backend.dto.SkillDto;
-import com.portafolio.mi_portafolio_backend.dto.SkillMapper;
+import com.portafolio.mi_portafolio_backend.mapper.SkillMapper;
 import com.portafolio.mi_portafolio_backend.model.Skill;
 import com.portafolio.mi_portafolio_backend.service.ISkillService;
 import jakarta.validation.Valid;
