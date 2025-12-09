@@ -10,8 +10,7 @@ header {
     text-align: center;
     background-size: cover;
     background-position: center;
-    position: relative; 
-    overflow: hidden; 
+    position: relative;
 }
 
 .profile-image-container {
@@ -86,6 +85,14 @@ header nav ul li a:hover {
 /* Sección "QUIEN SOY?" */
 main .container {
     background-color: var(--color-dark);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.admin-section{
+    flex-grow: 1;
 }
 
 #about {
@@ -391,4 +398,16 @@ footer {
 
 .btn-delete:hover {
     background-color: #da190b; /* Un rojo más oscuro al pasar el ratón */
+}
+
+@media (max-width: 768px){
+
+    header nav ul{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav li{
+        margin: 10px 0;
+    }
 }
