@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Formulario de Habilidad</title>
+    <title th:text="${skillDto.id == null ? 'Crear Habilidad' : 'Editar Habilidad'}">Formulario de Habilidad</title>
     <link rel="stylesheet" href="/css/general.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/form-style.css">
@@ -23,7 +23,7 @@
                 <a th:href="@{/skills}">Volver a la lista de Habilidades</a>
                 <a th:href="@{/logout}">Cerrar Sesión</a>
             </div>
-            <h2>Formulario de Habilidad</h2>
+            <h2 th:text="${skillDto.id == null ? 'Crear Nueva Habilidad' : 'Editar Habilidad'}">Formulario de Habilidad</h2>
 
             <form class="contact-form" method="post" th:action="@{/skills/save}" th:object="${skillDto}">
                 <input type="hidden" th:field="*{id}" />
