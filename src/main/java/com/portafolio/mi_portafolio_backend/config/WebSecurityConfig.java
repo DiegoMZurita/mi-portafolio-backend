@@ -1,7 +1,10 @@
 package com.portafolio.mi_portafolio_backend.config;
 
+import com.portafolio.mi_portafolio_backend.service.IUserDetailsService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -14,7 +17,11 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class WebSecurityConfig {
+
+    private final IUserDetailsService userDetailsService;
+
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -30,8 +37,7 @@ public class WebSecurityConfig {
                                 "/skills/edit/**", "/skills/delete/**").authenticated()
                         .requestMatchers("/personal-info/create", "/personal-info/edit/**",
                                  "/personal-info/save").authenticated()
-                        .requestMatchers("/project/new", "/project/save",
-                                "/project/edit/**", "/project/delete/**").authenticated()
+                        .requestMatchers("/projects/new-project", "/projects/save").authenticated()
 
                         .requestMatchers("/education/personal/**", "/experience/personal/**",
                                 "/skills/personal/**").authenticated()
@@ -42,15 +48,19 @@ public class WebSecurityConfig {
         return http.build();
     }
 
-    @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
-        UserDetails user = User.withUsername("admin")
-                .password(passwordEncoder.encode("1234"))
-                .roles("ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(user);
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
+
+//    @Bean
+//    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
+//        UserDetails user = User.withUsername("admin")
+//                .password(passwordEncoder.encode("1234"))
+//                .roles("ADMIN")
+//                .build();
+//
+//        return new InMemoryUserDetailsManager(user);
+//    }
 
     @Bean
     public PasswordEncoder passwordEncoder(){
