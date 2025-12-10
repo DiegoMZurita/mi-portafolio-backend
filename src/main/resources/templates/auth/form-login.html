@@ -11,7 +11,7 @@
     <section class="login-container">
         <h1>Iniciar Sesión</h1>
 
-        <div th:if="${error}" class="alert alert-danger" role="alert">
+        <div th:if="${error}" class="error-message" role="alert">
             <span th:text="${error}"></span>
         </div>
         <div th:if="${message}" class="alert alert-success" role="alert">

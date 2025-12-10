@@ -45,6 +45,16 @@ public class WebSecurityConfig {
         )
                 .formLogin(form ->
                         form.loginPage("/login").permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutRequestMatcher( request ->
+                                "GET".equalsIgnoreCase(request.getMethod()) && "/logout".equals(request.getRequestURI())
+                                )
+                        .logoutSuccessUrl("/login?logout")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
+                        .permitAll()
                 );
 
         return http.build();
