@@ -7,6 +7,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -31,8 +33,8 @@ public class WebSecurityConfig {
                         .requestMatchers("/project/new", "/project/save",
                                 "/project/edit/**", "/project/delete/**").authenticated()
 
-                        .requestMatchers("/education/personal/**", "experience/personal/**",
-                                "skills/personal/**").authenticated()
+                        .requestMatchers("/education/personal/**", "/experience/personal/**",
+                                "/skills/personal/**").authenticated()
                         .anyRequest().permitAll()
         )
                 .formLogin(form -> form.permitAll());
@@ -41,13 +43,17 @@ public class WebSecurityConfig {
     }
 
     @Bean
-    public UserDetailsService userDetailsService(){
-        UserDetails user = User.withDefaultPasswordEncoder()
-                .username("admin")
-                .password("1234")
+    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
+        UserDetails user = User.withUsername("admin")
+                .password(passwordEncoder.encode("1234"))
                 .roles("ADMIN")
                 .build();
 
         return new InMemoryUserDetailsManager(user);
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
     }
 }
