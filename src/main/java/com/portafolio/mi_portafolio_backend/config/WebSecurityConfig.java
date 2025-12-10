@@ -43,7 +43,9 @@ public class WebSecurityConfig {
                                 "/skills/personal/**").authenticated()
                         .anyRequest().permitAll()
         )
-                .formLogin(form -> form.permitAll());
+                .formLogin(form ->
+                        form.loginPage("/login").permitAll()
+                );
 
         return http.build();
     }
