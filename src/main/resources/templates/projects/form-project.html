@@ -19,8 +19,13 @@
     <main>
         <div class="container">
             <div class="admin-actions">
-                <a th:href="@{/projects}">Volver a la lista de Proyectos</a>
-                <a th:href="@{/logout}" class="logout-link">Cerrar Sesión</a>
+                <button class="btn-logout" type="button" th:onclick="|window.location.href='@{/projects}'|">
+                    Volver a la lista de Proyectos
+                </button>
+                <form th:action="@{/logout}" method="post">
+                    <input type="hidden" name="${_csrf.parameterName}}" th:value="${_csrf.token}">
+                    <button type="submit" class="btn-logout">Cerrar Sesión</button>
+                </form>
             </div>
             <section id="contact">
                 <h2>Formulario de Proyecto</h2>

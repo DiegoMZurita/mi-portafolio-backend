@@ -14,8 +14,8 @@
         <div th:if="${error}" class="error-message" role="alert">
             <span th:text="${error}"></span>
         </div>
-        <div th:if="${message}" class="alert alert-success" role="alert">
-            <sp th:text="${message}"></sp>
+        <div th:if="${logout}" class="alert alert-success" role="alert">
+            <sp th:text="${logout}"></sp>
         </div>
 
         <form th:action="@{/login}" method="post" class="login-form">

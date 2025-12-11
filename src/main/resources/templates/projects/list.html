@@ -19,9 +19,14 @@
     <main>
         <div class="container">
             <section class="admin-section">
-                <div class="admin-actions">
-                    <a th:href="@{/projects/new-project}">Crear Nuevo Proyecto</a>
-                    <a th:href="@{/logout}" class="logout-link">Cerrar Sesión</a>
+                <div class="menu-list">
+                    <button class="btn-logout" type="button" th:onclick="|window.location.href='@{/projects/new-project}'|">
+                        Crear Nuevo Proyecto
+                    </button>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="hidden" name="${_csrf.parameterName}}" th:value="${_csrf.token}">
+                        <button type="submit" class="btn-logout">Cerrar Sesión</button>
+                    </form>
                 </div>
                 <h2>Proyectos guardados</h2>
 
