@@ -16,10 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
-<<<<<<< HEAD
-=======
 import java.util.Optional;
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
 
 @Controller
 @RequiredArgsConstructor
@@ -45,8 +42,6 @@ public class ProjectController {
         return "projects/form-project";
     }
 
-<<<<<<< HEAD
-=======
     @GetMapping("/edit/{id}")
     public String showEditForm(@PathVariable Long id, Model model) {
         Optional<Project> projectOptional = projectService.findById(id);
@@ -59,18 +54,13 @@ public class ProjectController {
         return "redirect:/projects";
     }
 
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
     @PostMapping("/save")
     public String saveProject(@Valid @ModelAttribute("projectDto") ProjectDto projectDto, BindingResult result,
                                 @RequestParam("file") MultipartFile file
     ){
-<<<<<<< HEAD
-        if(file.isEmpty()){
-=======
         boolean isCreating = projectDto.getId() == null;
 
         if(isCreating && file.isEmpty()){
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
             result.rejectValue("imageUrl","file.required", "La imagen del proyecto es obligatoria.");
         }
 
@@ -79,11 +69,6 @@ public class ProjectController {
         }
 
         try{
-<<<<<<< HEAD
-            String imageURL = fileStorageService.storeFile(file);
-
-            projectDto.setImageUrl(imageURL);
-=======
             if(!file.isEmpty()) {
                 String imageURL = fileStorageService.storeFile(file);
                 projectDto.setImageUrl(imageURL);
@@ -92,7 +77,6 @@ public class ProjectController {
                         .map(Project::getImageUrl)
                         .ifPresent(projectDto::setImageUrl);
             }
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
 
             Project project = ProjectMapper.toEntity(projectDto);
 
@@ -106,13 +90,10 @@ public class ProjectController {
 
     }
 
-<<<<<<< HEAD
-=======
     @PostMapping("/delete/{id}")
     public String deleteProject(@PathVariable Long id) {
         projectService.deleteById(id);
         return "redirect:/projects";
     }
 
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
 }

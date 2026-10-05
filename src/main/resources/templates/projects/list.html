@@ -24,20 +24,13 @@
                         Crear Nuevo Proyecto
                     </button>
                     <form th:action="@{/logout}" method="post">
-<<<<<<< HEAD
-                        <input type="hidden" name="${_csrf.parameterName}}" th:value="${_csrf.token}">
-=======
                         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
                         <button type="submit" class="btn-logout">Cerrar Sesión</button>
                     </form>
                 </div>
                 <h2>Proyectos guardados</h2>
 
-<<<<<<< HEAD
-=======
                 <div class="admin-table-wrapper">
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
                 <table class="admin-table">
                     <thead>
                     <tr>
@@ -45,10 +38,7 @@
                         <th>Descripción</th>
                         <th>URL del proyecto</th>
                         <th>Imagen</th>
-<<<<<<< HEAD
-=======
                         <th>Acciones</th>
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
                     </tr>
                     </thead>
                     <tbody>
@@ -59,11 +49,6 @@
                         <td>
                             <img th:src="@{${project.imageUrl}}" width="150" height="150" alt="Imagen del proyecto"/>
                         </td>
-<<<<<<< HEAD
-                    </tr>
-                    </tbody>
-                </table>
-=======
                         <td class="admin-row-actions">
                             <a th:href="@{/projects/edit/{id}(id=${project.id})}" class="btn-edit">Editar</a>
                             <form th:action="@{/projects/delete/{id}(id=${project.id})}" method="post">
@@ -75,7 +60,6 @@
                     </tbody>
                 </table>
                 </div>
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
             </section>
         </div>
     </main>
@@ -83,8 +67,4 @@
 
     <div th:insert="~{fragments/footer :: footer}"></div>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)

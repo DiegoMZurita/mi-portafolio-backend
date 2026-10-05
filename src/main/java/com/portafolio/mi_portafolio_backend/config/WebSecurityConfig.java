@@ -39,12 +39,8 @@ public class WebSecurityConfig {
                                 "/skills/edit/**", "/skills/delete/**").authenticated()
                         .requestMatchers("/personal-info/create", "/personal-info/edit/**",
                                  "/personal-info/save").authenticated()
-<<<<<<< HEAD
-                        .requestMatchers("/projects/new-project", "/projects/save").authenticated()
-=======
                         .requestMatchers("/projects/new-project", "/projects/save",
                                 "/projects/edit/**", "/projects/delete/**").authenticated()
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
 
                         .requestMatchers("/education/personal/**", "/experience/personal/**",
                                 "/skills/personal/**").authenticated()

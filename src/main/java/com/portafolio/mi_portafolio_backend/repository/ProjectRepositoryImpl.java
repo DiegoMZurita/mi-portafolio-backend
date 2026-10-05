@@ -65,11 +65,7 @@ public class ProjectRepositoryImpl implements IProjectRepository {
 
             project.setId(Objects.requireNonNull(keyHolder.getKey()).longValue());
         }else{
-<<<<<<< HEAD
-            String sql = "UPDATE projects SET title = ?, description = ?, image_url = ?, project_url = ? WHERE id = ?";
-=======
             String sql = "UPDATE projects SET title = ?, description = ?, image_url = ?, project_url = ?, personal_info_id = ? WHERE id = ?";
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
             jdbcTemplate.update(sql,
                     project.getTitle(),
                     project.getDescription(),

@@ -90,11 +90,7 @@ public class ExperienceController {
             redirectAttributes.addFlashAttribute("error", "Error al eliminar la experiencia laboral: " + e.getMessage());
         }
 
-<<<<<<< HEAD
-        return "redirect;/experience";
-=======
         return "redirect:/experience";
->>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
     }
 
 }
