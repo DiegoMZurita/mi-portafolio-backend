@@ -6,6 +6,7 @@ El proyecto está diseñado con una arquitectura clara, separación de responsab
 
 ## Accede a la aplicación en producción:
 https://mi-portafolio-backend-1yrb.onrender.com/
+
 ---
 
 ## 🚀 Funcionalidades principales
