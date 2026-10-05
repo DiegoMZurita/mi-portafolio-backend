@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 input[type="file"]::file-selector-button {
     background-color: var(--color-primary-gold); /* Dorado */
     color: var(--color-dark); /* Texto oscuro */
@@ -13,3 +14,6 @@ input[type="file"]::file-selector-button:hover {
     background-color: var(--color-dark); /* Oscuro al pasar el ratón */
     color: var(--color-primary-gold); /* Texto dorado al pasar el ratón */
 }
+=======
+/* Los formularios administrativos comparten form-style.css. */
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)

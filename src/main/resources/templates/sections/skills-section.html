@@ -8,12 +8,92 @@
 <section id="skills" th:fragment="skills">
     <h2>MIS HABILIDADES</h2>
 
+<<<<<<< HEAD
     <div class="skills-grid">
         <div class="skill-card" th:each="skill : ${skills}">
             <img th:src="${skill.iconClass}" th:alt="${skill.name}">
             <h3 th:text="${skill.name}">Nombre Skill</h3>
+=======
+    <div class="skills-category">
+        <h3>Backend</h3>
+        <div class="skills-grid">
+            <div class="skill-card" th:each="skill : ${skills}" th:if="${skill.name == 'Spring Boot' || skill.name == 'Node.js' || skill.name == 'Express' || skill.name == 'Django'}">
+                <img th:src="${skill.iconClass}" th:alt="${skill.name}">
+                <div class="skill-content">
+                    <h4 th:text="${skill.name}">Nombre Skill</h4>
+                    <div class="skill-meta">
+                        <span>Nivel</span>
+                        <strong th:text="${skill.levelPercentage > 80 ? 'Avanzado' : (skill.levelPercentage >= 66 ? 'Intermedio' : 'Base sólida')}">Avanzado</strong>
+                    </div>
+                    <div class="skill-progress" th:aria-label="${'Nivel ' + (skill.levelPercentage > 80 ? 'Avanzado' : (skill.levelPercentage >= 66 ? 'Intermedio' : 'Base sólida'))}">
+                        <span th:style="'width:' + ${skill.levelPercentage} + '%'"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="skills-category">
+        <h3>Frontend</h3>
+        <div class="skills-grid">
+            <div class="skill-card" th:each="skill : ${skills}" th:if="${skill.name == 'React' || skill.name == 'TypeScript' || skill.name == 'JavaScript' || skill.name == 'HTML5' || skill.name == 'CSS3'}">
+                <img th:src="${skill.iconClass}" th:alt="${skill.name}">
+                <div class="skill-content">
+                    <h4 th:text="${skill.name}">Nombre Skill</h4>
+                    <div class="skill-meta">
+                        <span>Nivel</span>
+                        <strong th:text="${skill.levelPercentage > 80 ? 'Avanzado' : (skill.levelPercentage >= 66 ? 'Intermedio' : 'Base sólida')}">Avanzado</strong>
+                    </div>
+                    <div class="skill-progress" th:aria-label="${'Nivel ' + (skill.levelPercentage > 80 ? 'Avanzado' : (skill.levelPercentage >= 66 ? 'Intermedio' : 'Base sólida'))}">
+                        <span th:style="'width:' + ${skill.levelPercentage} + '%'"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="skills-category">
+        <h3>Datos</h3>
+        <div class="skills-grid">
+            <div class="skill-card" th:each="skill : ${skills}" th:if="${skill.name == 'PostgreSQL' || skill.name == 'SQL Server' || skill.name == 'MySQL' || skill.name == 'MongoDB'}">
+                <img th:src="${skill.iconClass}" th:alt="${skill.name}">
+                <div class="skill-content">
+                    <h4 th:text="${skill.name}">Nombre Skill</h4>
+                    <div class="skill-meta">
+                        <span>Nivel</span>
+                        <strong th:text="${skill.levelPercentage > 80 ? 'Avanzado' : (skill.levelPercentage >= 66 ? 'Intermedio' : 'Base sólida')}">Avanzado</strong>
+                    </div>
+                    <div class="skill-progress" th:aria-label="${'Nivel ' + (skill.levelPercentage > 80 ? 'Avanzado' : (skill.levelPercentage >= 66 ? 'Intermedio' : 'Base sólida'))}">
+                        <span th:style="'width:' + ${skill.levelPercentage} + '%'"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="skills-category">
+        <h3>Cloud y herramientas</h3>
+        <div class="skills-grid">
+            <div class="skill-card" th:each="skill : ${skills}" th:if="${skill.name == 'AWS' || skill.name == 'Docker' || skill.name == 'Jenkins' || skill.name == 'Git & GitHub'}">
+                <img th:src="${skill.iconClass}" th:alt="${skill.name}">
+                <div class="skill-content">
+                    <h4 th:text="${skill.name}">Nombre Skill</h4>
+                    <div class="skill-meta">
+                        <span>Nivel</span>
+                        <strong th:text="${skill.levelPercentage > 80 ? 'Avanzado' : (skill.levelPercentage >= 66 ? 'Intermedio' : 'Base sólida')}">Avanzado</strong>
+                    </div>
+                    <div class="skill-progress" th:aria-label="${'Nivel ' + (skill.levelPercentage > 80 ? 'Avanzado' : (skill.levelPercentage >= 66 ? 'Intermedio' : 'Base sólida'))}">
+                        <span th:style="'width:' + ${skill.levelPercentage} + '%'"></span>
+                    </div>
+                </div>
+            </div>
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
         </div>
     </div>
 </section>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)

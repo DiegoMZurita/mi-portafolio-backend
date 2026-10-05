@@ -24,7 +24,11 @@
                     Crear Nueva Habilidad
                 </button>
                 <form th:action="@{/logout}" method="post">
+<<<<<<< HEAD
                     <input type="hidden" name="${_csrf.parameterName}}" th:value="${_csrf.token}">
+=======
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
                     <button type="submit" class="btn-logout">Cerrar Sesión</button>
                 </form>
             </div>
@@ -33,10 +37,18 @@
             <div th:if="${message}" class="message-success">
                 <p th:text="${message}"></p>
             </div>
+<<<<<<< HEAD
             <div th:if="${error}"class="message-error">
                 <p th:text="${error}"></p>
             </div>
 
+=======
+            <div th:if="${error}" class="message-error">
+                <p th:text="${error}"></p>
+            </div>
+
+            <div class="admin-table-wrapper">
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
             <table class="admin-table">
                 <thead>
                 <tr>
@@ -55,15 +67,26 @@
                     <td th:text="${skill.levelPercentage}"></td>
                     <td th:text="${skill.iconClass}"></td>
                     <td th:text="${skill.personalInfoId}"></td>
+<<<<<<< HEAD
                     <td>
                         <a th:href="@{/skills/edit/{id}(id=${skill.id})}" class="btn-edit">Editar</a>
                         <form th:action="@{/skills/delete/{id}(id=${skill.id})}" method="post" style="display:inline;">
+=======
+                    <td class="admin-row-actions">
+                        <a th:href="@{/skills/edit/{id}(id=${skill.id})}" class="btn-edit">Editar</a>
+                        <form th:action="@{/skills/delete/{id}(id=${skill.id})}" method="post">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
                             <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de que quieres eliminar esta habilidad?');">Eliminar</button>
                         </form>
                     </td>
                 </tr>
                 </tbody>
             </table>
+<<<<<<< HEAD
+=======
+            </div>
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
 
             <p th:if="${skills.isEmpty()}" class="no-data-message">No hay habilidades registradas.</p>
 
@@ -73,4 +96,8 @@
 
     <div th:insert="~{fragments/footer :: footer}"></div>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)

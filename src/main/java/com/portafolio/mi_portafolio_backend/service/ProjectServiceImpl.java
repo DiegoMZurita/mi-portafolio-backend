@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+<<<<<<< HEAD
+=======
+import java.util.Optional;
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
 
 @Service
 @RequiredArgsConstructor
@@ -21,8 +25,26 @@ public class ProjectServiceImpl implements IProjectService{
     }
 
     @Override
+<<<<<<< HEAD
+=======
+    @Transactional(readOnly = true)
+    public Optional<Project> findById(Long id) {
+        return projectRepository.findById(id);
+    }
+
+    @Override
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
     @Transactional
     public Project save(Project project) {
         return projectRepository.save(project);
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    @Transactional
+    public void deleteById(Long id) {
+        projectRepository.deleteById(id);
+    }
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
 }

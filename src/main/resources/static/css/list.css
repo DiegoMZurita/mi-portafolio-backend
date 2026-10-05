@@ -1,4 +1,5 @@
 main .container {
+<<<<<<< HEAD
             background-color: var(--color-dark);
             padding: 40px;
 }
@@ -54,10 +55,96 @@ main .container {
     border-radius: 0.8rem; /* Bordes redondeados para la tabla */
     overflow: hidden; /* Asegura que los bordes redondeados se vean */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+=======
+    background: transparent;
+    padding: 0 2rem 5rem;
+}
+
+header .container {
+    padding-top: 2rem;
+}
+
+.admin-section {
+    width: min(1180px, 100%);
+    margin: 3rem auto 0;
+    padding: 2rem;
+    color: var(--color-dark);
+    background: var(--color-white);
+    border: 1px solid rgba(13, 58, 110, 0.12);
+    border-radius: 0.8rem;
+    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.1);
+}
+
+.admin-section h2 {
+    color: var(--color-blue);
+    margin: 1.5rem 0 2rem;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    text-align: left;
+}
+
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(13, 58, 110, 0.12);
+}
+
+.btn-logout,
+.admin-section a,
+.btn-edit,
+.btn-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.2rem;
+    padding: 0.85rem 1.4rem;
+    border: 0;
+    border-radius: 0.6rem;
+    font-weight: 800;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-logout,
+.admin-section a {
+    background: var(--color-blue);
+    color: var(--color-white);
+    box-shadow: 0 10px 24px rgba(13, 58, 110, 0.18);
+}
+
+.btn-logout:hover,
+.admin-section a:hover {
+    background: var(--color-secondary-green);
+    color: var(--color-dark);
+    transform: translateY(-1px);
+}
+
+.admin-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid rgba(13, 58, 110, 0.1);
+    border-radius: 0.8rem;
+    background: var(--color-white);
+}
+
+.admin-table {
+    width: 100%;
+    min-width: 860px;
+    border-collapse: collapse;
+    background: var(--color-white);
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
 }
 
 .admin-table th,
 .admin-table td {
+<<<<<<< HEAD
     padding: 1.5rem;
     text-align: left;
     border-bottom: 1px solid var(--color-primary-sky); /* Separador de filas */
@@ -90,3 +177,109 @@ main .container {
 .admin-table td:last-child {
     text-align: center;
 }
+=======
+    padding: 1.4rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(13, 58, 110, 0.1);
+}
+
+.admin-table th {
+    background: #eef4fb;
+    color: var(--color-blue);
+    font-size: 1.25rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.admin-table td {
+    color: var(--color-text);
+    font-size: 1.35rem;
+    line-height: 1.55;
+}
+
+.admin-table tbody tr:hover {
+    background: #f8fbff;
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.admin-table img {
+    width: 8rem;
+    height: 5.6rem;
+    object-fit: cover;
+    border-radius: 0.6rem;
+    border: 1px solid rgba(13, 58, 110, 0.12);
+}
+
+.admin-row-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    min-width: 16rem;
+}
+
+.admin-row-actions form {
+    margin: 0;
+}
+
+.btn-edit {
+    background: #e7f0fb;
+    color: var(--color-blue);
+}
+
+.btn-delete {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+}
+
+.message-success,
+.message-error,
+.no-data-message {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.4rem;
+    border-radius: 0.7rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.message-success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.message-error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.no-data-message {
+    background: #f1f5f9;
+    color: var(--color-blue);
+}
+
+@media (max-width: 767px) {
+    main .container {
+        padding: 0 1rem 4rem;
+    }
+
+    .admin-section {
+        margin-top: 1.5rem;
+        padding: 1.4rem;
+    }
+
+    .menu-list,
+    .menu-list form,
+    .btn-logout {
+        width: 100%;
+    }
+}
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)

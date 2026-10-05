@@ -9,7 +9,15 @@
     <div class="experience-timeline">
         <div class="timeline-item" th:each="exp: ${experienceList}">
             <h3 th:text="${exp.jobTitle} + ' - ' + ${exp.companyName}"></h3>
+<<<<<<< HEAD
             <p class="timeline-date" th:text="${exp.startDate} + ' - ' + ${exp.endDate}"></p>
+=======
+            <div class="date-range">
+                <span th:text="${#strings.capitalize(#temporals.format(exp.startDate, 'MMMM yyyy'))}"></span>
+                <span class="date-separator">→</span>
+                <span th:text="${exp.endDate != null ? #strings.capitalize(#temporals.format(exp.endDate, 'MMMM yyyy')) : 'Actualidad'}"></span>
+            </div>
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
             <p th:text="${exp.description}"></p>
         </div>
     </div>
@@ -17,4 +25,8 @@
 </section>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)

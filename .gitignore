@@ -1,5 +1,10 @@
 HELP.md
 target/
+<<<<<<< HEAD
+=======
+.env
+src/main/resources/application-local.properties
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

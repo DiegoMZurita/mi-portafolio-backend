@@ -8,15 +8,46 @@
 
     <section id="education" th:fragment="education">
         <h2>MI EDUCACIÓN</h2>
+<<<<<<< HEAD
         <div class="education-timeline">
             <div class="timeline-item" th:each="edu : ${educationList}">
                 <h3 th:text="${edu.degree} + ' - ' +  ${edu.institution}"></h3>
                 <p class="timeline-date" th:text="${edu.startDate} + ' - ' + ${edu.endDate} "></p>
                 <p th:text="${edu.description}"></p>
+=======
+
+        <div class="education-group">
+            <h3 class="section-subtitle">Títulos académicos</h3>
+            <div class="education-timeline">
+                <div class="timeline-item" th:each="edu : ${educationList}" th:if="${edu.institution.equals('IPLACEX')}">
+                    <h3 th:text="${edu.degree} + ' - ' +  ${edu.institution}"></h3>
+                    <div class="date-range">
+                        <span th:text="${#strings.capitalize(#temporals.format(edu.startDate, 'MMMM yyyy'))}"></span>
+                        <span class="date-separator">→</span>
+                        <span th:text="${edu.endDate != null ? #strings.capitalize(#temporals.format(edu.endDate, 'MMMM yyyy')) : 'Actualidad'}"></span>
+                    </div>
+                    <p th:text="${edu.description}"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="education-group">
+            <h3 class="section-subtitle">Certificaciones</h3>
+            <div class="certifications-grid">
+                <article class="certification-card" th:each="edu : ${educationList}" th:if="${!edu.institution.equals('IPLACEX')}">
+                    <span th:text="${edu.institution}">Institución</span>
+                    <h3 th:text="${edu.degree}">Certificación</h3>
+                    <p th:text="${edu.description}"></p>
+                </article>
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
             </div>
         </div>
     </section>
 
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)

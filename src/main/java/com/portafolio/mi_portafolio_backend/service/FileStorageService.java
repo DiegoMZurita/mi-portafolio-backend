@@ -32,8 +32,15 @@ public class FileStorageService {
 
         String fileName = UUID.randomUUID().toString() + extension;
 
+<<<<<<< HEAD
         //creación de la ruta
         Path filePath = Paths.get(uploadDir + fileName).normalize();
+=======
+        Path uploadPath = Paths.get(uploadDir).normalize();
+        Files.createDirectories(uploadPath);
+
+        Path filePath = uploadPath.resolve(fileName).normalize();
+>>>>>>> 3b90af7 (Actualizacion portafolio y preparado para despliegue)
 
         //copia del archivo al destino
         Files.copy(file.getInputStream(), filePath);
